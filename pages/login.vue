@@ -30,14 +30,15 @@ const login = () => {
 </script>
 
 <template>
-    Login page
+    
+    <h3>Login Page</h3>
 
     <form v-on:submit.prevent="login">
         <label for="email">email:</label>
         <input id="email" type="text" v-model="email">
         <label for="password">Password:</label>
         <input id="password" type="password" v-model="password">
-        <input type="submit" value="Login">
+        <input id="submit" type="submit" value="Login">
     </form>
 </template>
 

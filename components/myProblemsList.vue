@@ -1,6 +1,8 @@
 <script setup lang="ts">
 
-const problems = ref([]);
+import { Problem } from '@/types/problem'
+
+const problems = ref<Problem[]>([]);
 
 onMounted(() => {
     fetch("https://localhost:7194/api/Problem/get-user-problems", {
@@ -20,7 +22,7 @@ onMounted(() => {
 
 <template>
 
-    <h2>My problems</h2>
+    <h3>My problems.</h3>
 
     <p v-for="problem in problems">
         <b>Name:</b> {{ problem.name }} <br/>

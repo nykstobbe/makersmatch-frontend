@@ -37,7 +37,7 @@ const register = () => {
 </script>
 
 <template>
-    Register page
+    <h3>Register page </h3>
 
     <form v-on:submit.prevent="register">
         <label for="username">Username:</label>

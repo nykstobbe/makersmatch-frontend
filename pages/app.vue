@@ -1,8 +1,5 @@
 <script setup lang="ts">
 
-import { GetToken } from '~/utils/getToken';
-
-
 definePageMeta({
     middleware: [
         'auth',
