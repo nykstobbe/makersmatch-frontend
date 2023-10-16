@@ -24,7 +24,13 @@ const register = () => {
         },
         body: JSON.stringify(registerModel)
     }).then(async (res) => {
-        console.log(await res.json());
+        const response = await res.json();
+
+        if (res.status >= 200 && res.status <= 300) {
+            navigateTo('/login');
+        } else {
+            console.log(response);
+        }
     })
 }
 

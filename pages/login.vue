@@ -1,12 +1,12 @@
 <script setup lang="ts">
 
 // state
-const username = ref('');
+const email = ref('');
 const password = ref('');
 
 const login = () => {
     const loginModel = {
-        username: username.value,
+        email: email.value,
         password: password.value
     }
 
@@ -33,8 +33,8 @@ const login = () => {
     Login page
 
     <form v-on:submit.prevent="login">
-        <label for="username">Username:</label>
-        <input id="username" type="text" v-model="username">
+        <label for="email">email:</label>
+        <input id="email" type="text" v-model="email">
         <label for="password">Password:</label>
         <input id="password" type="password" v-model="password">
         <input type="submit" value="Login">
