@@ -1,0 +1,33 @@
+<script setup lang="ts">
+
+import { Problem } from '@/types/problem'
+
+const problems = ref<Problem[]>([]);
+
+onMounted(() => {
+    fetch("https://localhost:7194/api/Problem/get-solvable-problems", {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `bearer ${GetToken()}`
+        }
+    }).then(async (res) => {
+        const response : [] = await res.json();
+
+        if (res.ok) 
+            problems.value = response;
+    });
+});
+
+</script>
+
+<template>
+
+    <h3>Problems you could solve.</h3>
+
+    <p v-for="problem in problems">
+        <b>Name:</b> {{ problem.name }} <br/>
+        <b>Description:</b> {{ problem.description }} <br/>
+        <button>Chat with problem-owner</button>
+    </p>
+
+</template>
