@@ -1,6 +1,6 @@
 <template>
 
-    Welcome to makersmatch!<br/>
+    Welcome to makersmatch!<br/><br/>
 
     <NuxtLink to="/login">
         Login

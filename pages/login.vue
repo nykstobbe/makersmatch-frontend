@@ -33,7 +33,7 @@ const login = () => {
     
     <h3>Login Page</h3>
 
-    <form v-on:submit.prevent="login">
+    <form class="login-form" v-on:submit.prevent="login">
         <label for="email">email:</label>
         <input id="email" type="text" v-model="email">
         <label for="password">Password:</label>
@@ -43,9 +43,11 @@ const login = () => {
 </template>
 
 <style>
+
 form {
     display: flex;
     flex-direction: column;
     width: 160px;
 }
+
 </style>
