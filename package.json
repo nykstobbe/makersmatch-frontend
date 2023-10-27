@@ -11,6 +11,7 @@
     "test": "npx cypress run"
   },
   "devDependencies": {
+    "@aspnet/signalr": "^1.0.27",
     "@nuxt/devtools": "latest",
     "cypress": "^13.3.1",
     "nuxt": "^3.7.4",

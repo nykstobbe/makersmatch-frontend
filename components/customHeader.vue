@@ -5,7 +5,7 @@
         </div>
         <nav>
             <ul>
-                <NuxtLink to="./login">Login</NuxtLink>
+                <NuxtLink to="/login">Login</NuxtLink>
             </ul>
         </nav>
     </header>
