@@ -46,7 +46,7 @@ const register = () => {
         <input id="email" type="email" v-model="email">
         <label for="password">Password</label>
         <input id="password" type="password" v-model="password">
-        <label for="role">Pick wether you want to be a maker, a problem owner or both.</label>
+        <label for="role">Pick wether you want to be a Maker, a Problem Owner or both.</label>
         <select id="role" name="role" size="2" multiple v-model="roles">
             <option value="Maker">Maker</option>
             <option value="ProblemOwner">Problem Owner</option>

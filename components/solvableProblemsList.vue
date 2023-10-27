@@ -18,6 +18,23 @@ onMounted(() => {
     });
 });
 
+
+const startChat = (userId: string) => {
+    fetch(`https://localhost:7194/api/Chat/start-new-chat/${userId}`, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `bearer ${GetToken()}`
+        }
+    }).then(async (res) => {
+        const response : number = await res.json();
+
+        console.log(response)
+
+        if (res.ok) 
+            navigateTo(`/chat/${response}`);
+    });
+}
+
 </script>
 
 <template>
@@ -27,7 +44,7 @@ onMounted(() => {
     <p v-for="problem in problems">
         <b>Name:</b> {{ problem.name }} <br/>
         <b>Description:</b> {{ problem.description }} <br/>
-        <button>Chat with problem-owner</button>
+        <button @click="startChat(problem.userId)">Chat with problem-owner</button>
     </p>
 
 </template>
