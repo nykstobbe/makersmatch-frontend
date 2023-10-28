@@ -60,7 +60,7 @@ const sendMessage = () => {
     <h3>Chat {{ chatId }}.</h3>
 
     <p v-for="chat in chats">
-        <b>UserId:</b> {{ chat.senderID }} <br/>
+        <b>From:</b> {{ chat.senderID }} <br/>
         <b>Message:</b> {{ chat.message }}
     </p>
 
