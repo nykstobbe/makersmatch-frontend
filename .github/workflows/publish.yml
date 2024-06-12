@@ -1,0 +1,31 @@
+name: Publish docker image to server
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag makersmatch-frontend:latest
+  
+      - name: Save the docker image
+        run: docker image save -o makersmatch-frontend.tar makersmatch-frontend:latest
+  
+      - name: copy the docker image to the server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.KEY }}
+          source: "makersmatch-frontend.tar"
+          target: .
