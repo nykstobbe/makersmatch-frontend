@@ -41,7 +41,7 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             docker stop makersmatchfrontend
-            docker rmi makersmatchfrontend:latest
+            docker rmi makersmatch-frontend:latest
             docker load -i makersmatch-frontend.tar
-            docker run -d -p 8083:3000 --name makersmatchfrontend --restart always makersmatchfrontend:latest
+            docker run -d -p 8083:3000 --name makersmatchfrontend --restart always makersmatch-frontend:latest
           
