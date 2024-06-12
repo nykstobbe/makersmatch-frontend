@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="logo">
-            <h2>MakersMatch</h2>
+            <h2>MakersMatch Testing</h2>
         </div>
         <nav>
             <ul>

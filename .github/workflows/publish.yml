@@ -22,7 +22,7 @@ jobs:
           docker image save -o makersmatch-frontend.tar makersmatch-frontend:latest
           chmod 664 makersmatch-frontend.tar
   
-      - name: copy the docker image to the server
+      - name: Copy the docker image to the server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HOST }}
@@ -31,3 +31,16 @@ jobs:
           key: ${{ secrets.KEY }}
           source: "makersmatch-frontend.tar"
           target: ./
+
+      - name: Remove running docker container and start new docker container
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            docker load -i makersmatch-frontend.tar
+            docker stop makersmatchfrontend
+            docker rmi makersmatchfrontend:latest
+            docker run -d -p 8083:3000 --name makersmatchfrontend --restart always makersmatchfrontend:latest
