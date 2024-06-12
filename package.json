@@ -7,10 +7,13 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "npx cypress run"
   },
   "devDependencies": {
+    "@aspnet/signalr": "^1.0.27",
     "@nuxt/devtools": "latest",
+    "cypress": "^13.3.1",
     "nuxt": "^3.7.4",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
