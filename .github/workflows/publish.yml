@@ -18,7 +18,9 @@ jobs:
         run: docker build . --file Dockerfile --tag makersmatch-frontend:latest
   
       - name: Save the docker image
-        run: docker image save -o makersmatch-frontend.tar makersmatch-frontend:latest
+        run: | 
+          docker image save -o makersmatch-frontend.tar makersmatch-frontend:latest
+          chmod 664 makersmatch-frontend.tar
   
       - name: copy the docker image to the server
         uses: appleboy/scp-action@v0.1.7
