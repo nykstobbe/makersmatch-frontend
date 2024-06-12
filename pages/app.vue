@@ -11,7 +11,7 @@ const isMaker = ref(false);
 const isProblemOwner = ref(false)
 
 onMounted(() => {
-    fetch("https://localhost:7194/api/Authentication/get-roles", {
+    fetch("/api/Authentication/get-roles", {
         headers: {
             "Content-Type": "application/json",
             "Authorization": `bearer ${GetToken()}`
@@ -43,6 +43,10 @@ onMounted(() => {
     
     <div id="section-problemowner" v-if="isProblemOwner">
         <ProblemOwnerSection/>
+    </div>
+
+    <div id="section-chats">
+        <MyChatsList/>
     </div>
 
 </template>

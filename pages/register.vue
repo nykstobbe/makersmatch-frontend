@@ -16,7 +16,7 @@ const register = () => {
 
     console.log(JSON.stringify(registerModel));
 
-    fetch("https://localhost:7194/api/Authentication/register", {
+    fetch("/api/Authentication/register", {
         method: "POST",
         mode: "cors",
         headers: {

@@ -5,7 +5,7 @@ import { Problem } from '@/types/problem'
 const problems = ref<Problem[]>([]);
 
 onMounted(() => {
-    fetch("https://localhost:7194/api/Problem/get-solvable-problems", {
+    fetch("/api/Problem/get-solvable-problems", {
         headers: {
             "Content-Type": "application/json",
             "Authorization": `bearer ${GetToken()}`
@@ -20,7 +20,7 @@ onMounted(() => {
 
 
 const startChat = (userId: string) => {
-    fetch(`https://localhost:7194/api/Chat/start-new-chat/${userId}`, {
+    fetch(`/api/Chat/start-new-chat/${userId}`, {
         headers: {
             "Content-Type": "application/json",
             "Authorization": `bearer ${GetToken()}`

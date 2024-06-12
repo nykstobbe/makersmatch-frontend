@@ -10,7 +10,7 @@ const login = () => {
         password: password.value
     }
 
-    fetch("https://localhost:7194/api/Authentication/login", {
+    fetch("/api/Authentication/login", {
         method: "POST",
         mode: "cors",
         headers: {

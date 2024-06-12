@@ -5,7 +5,7 @@ import { Problem } from '@/types/problem'
 const problems = ref<Problem[]>([]);
 
 onMounted(() => {
-    fetch("https://localhost:7194/api/Problem/get-user-problems", {
+    fetch("/api/Problem/get-user-problems", {
         headers: {
             "Content-Type": "application/json",
             "Authorization": `bearer ${GetToken()}`
